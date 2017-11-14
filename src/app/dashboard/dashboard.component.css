@@ -1,0 +1,11 @@
+#dashboard {
+    width: 80vw;
+    margin: auto;
+}
+
+.board-category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80vw;
+}

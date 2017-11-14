@@ -1,2 +1,7 @@
-<h3>My Dashboard</h3>
-<app-board-summary *ngFor="let b of boards" [board]="b"></app-board-summary>
+<div id="dashboard">
+  <h3>My Dashboard</h3>
+
+  <app-board-category title="Mes Favoris" [boards]="getFavBoards()"></app-board-category>
+  <app-board-category title="Mes boards" [boards]="boards"></app-board-category>
+
+</div>

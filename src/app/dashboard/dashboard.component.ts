@@ -20,4 +20,8 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
+  getFavBoards(): Board[] {
+    return this.boards.filter((board) => board.isStarred);
+  }
+
 }
