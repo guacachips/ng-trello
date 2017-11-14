@@ -1,0 +1,6 @@
+<div (mouseenter)="updateIsFavHoverTo(true)" (mouseleave)="updateIsFavHoverTo(false)" [style.backgroundColor]="board.backgroundColor"
+  class="board-summary">
+  <div class="title">{{board.title}}</div>
+  <div class="flex"></div>
+  <div (click)="toggleIsStarred()" *ngIf="isFavHover" [class.is-starred]="board.isStarred" class="fav">fav</div>
+</div>

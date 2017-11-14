@@ -1,0 +1,35 @@
+div.board-summary {
+    background-color: #E2E4E6;
+    border-radius: 5px;
+    height: 5pc;
+    width: 300px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+div.board-summary .flex {
+    flex: auto;
+}
+
+div.board-summary .title {
+    font-weight: bold;
+    color: white;
+}
+
+.fav {
+    height: 10px;
+    width: 15px;
+}
+
+.fav:hover {
+    color: orange !important;
+    font-size: 1.1em;
+}
+
+.is-starred {
+    color: orange !important;
+}
