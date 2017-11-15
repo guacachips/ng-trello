@@ -10,7 +10,6 @@ import { BoardCategoryComponent } from './board-category/board-category.componen
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routing';
 import { BoardDetailComponent } from './board-detail/board-detail.component';
-import { BoardService } from './shared/board.service';
 
 
 @NgModule({
@@ -23,11 +22,9 @@ import { BoardService } from './shared/board.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
-    BoardService
   ],
   bootstrap: [AppComponent]
 })

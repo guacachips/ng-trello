@@ -1,8 +1,6 @@
 import { IBoard } from '../shared/board.interface';
 import { Board } from '../shared/board.model';
 import { Component, OnInit } from '@angular/core';
-import { BoardService } from '../shared/board.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,36 +10,41 @@ import { Observable } from 'rxjs/Observable';
 export class DashboardComponent implements OnInit {
 
   boards: Board[];
-  boardsStarred: Board[];
-  boards$: Observable<Board[]>;
-  boardsStarred$: Observable<Board[]>;
 
-  constructor(private boardService: BoardService) { }
+  constructor() { }
 
   ngOnInit() {
 
-    // this.boardService.getAllBoardsMocked().subscribe((data: Board[]) => {
-    //   this.boards = data;
-    //   this.boardsStarred = this._getFavBoards(data);
-    // });
-
-    // this.boardService.getAllBoards().subscribe((data: Board[]) => {
-    //   this.boards = data;
-    //   this.boardsStarred = this._getFavBoards(data);
-    // });
-
-    this.boards$ = this.boardService.getAllBoards();
-    this.boardsStarred$ = this._getFavBoards(this.boards$);
+    this.boards = [
+      {
+        id: '1',
+        title: 'Board 1',
+        backgroundColor: '#127abd',
+        isStarred: false
+      },
+      {
+        id: '2',
+        title: 'Board 2',
+        backgroundColor: '#127abd',
+        isStarred: false
+      },
+      {
+        id: '3',
+        title: 'Board 3',
+        backgroundColor: '#127abd',
+        isStarred: false
+      },
+      {
+        id: '4',
+        title: 'Board 4',
+        backgroundColor: '#127abd',
+        isStarred: false
+      }
+    ];
   }
 
-  public getFavBoards(boards: Board[]): Board[] {
-    return boards.filter((board) => board.isStarred);
-  }
-
-  private _getFavBoards(boards$: Observable<Board[]>): Observable<Board[]> {
-    return boards$.map(data => {
-      return data.filter((board) => board.isStarred);
-    });
+  public getFavBoards(): Board[] {
+    return this.boards.filter((board) => board.isStarred);
   }
 
 }
