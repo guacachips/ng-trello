@@ -1,5 +1,4 @@
 import { BoardService } from './shared/board.service';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routing';
 import { BoardDetailComponent } from './board-detail/board-detail.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { BoardDetailComponent } from './board-detail/board-detail.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

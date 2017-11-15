@@ -1,0 +1,38 @@
+#board-detail {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.container .title {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .title:hover {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.container.popup {
+    position: absolute;
+    background-color: red;
+}
+
+.flex {
+    flex: 1;
+}

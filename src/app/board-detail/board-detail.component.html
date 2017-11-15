@@ -1,3 +1,16 @@
-<p>
-  board-detail works!
-</p>
+<div *ngIf="!loading" id="board-detail" [style.backgroundColor]="board.backgroundColor">
+  <div class="container">
+    <button [routerLink]="['/']">retour</button>
+    <span class="title">{{board.title}}</span>
+    <span class="flex"></span>
+    <button [routerLink]="['/']">retour</button>
+  </div>
+
+  <div *ngIf="false" class="container popup">
+    AFFICHER ICI LE COMPOSANT PERMETTANT DE CHANGER LE NOM DU BOARD
+  </div>
+
+  <div class="container">
+    AFFICHER ICI UNE LISTE CONTENANT DES CARDS
+  </div>
+</div>

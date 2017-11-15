@@ -3,9 +3,19 @@
     margin: auto;
 }
 
-.board-category {
+.add-board-button {
+    background-color: #E2E4E6;
+    border-radius: 5px;
+    height: 5pc;
+    width: 300px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 15px;
+    margin: 10px 5px 10px 5px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #80878b;
 }

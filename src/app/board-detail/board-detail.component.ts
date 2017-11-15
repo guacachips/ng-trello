@@ -1,3 +1,5 @@
+import { Board } from '../shared/board.model';
+import { BoardService } from '../shared/board.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardDetailComponent implements OnInit {
 
+  public loading: boolean;
   public id: string;
+  public board: Board;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private boardService: BoardService
+  ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.loading = true;
+    const id = this.route.snapshot.paramMap.get('id');
+    this.boardService.getBoardById(id).subscribe((board: Board) => {
+      this.board = board;
+      this.loading = false;
+    });
   }
 
 }

@@ -16,4 +16,5 @@ export class BoardCategoryComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }
