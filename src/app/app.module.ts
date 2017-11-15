@@ -1,11 +1,16 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BoardSummaryComponent } from './board-summary/board-summary.component';
 import { BoardCategoryComponent } from './board-category/board-category.component';
+
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routing';
+import { BoardDetailComponent } from './board-detail/board-detail.component';
+import { BoardService } from './shared/board.service';
 
 
 @NgModule({
@@ -13,12 +18,17 @@ import { BoardCategoryComponent } from './board-category/board-category.componen
     AppComponent,
     DashboardComponent,
     BoardSummaryComponent,
-    BoardCategoryComponent
+    BoardCategoryComponent,
+    BoardDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    BoardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
