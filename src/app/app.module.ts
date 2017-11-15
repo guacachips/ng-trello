@@ -1,3 +1,4 @@
+import { BoardService } from './shared/board.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -25,6 +26,7 @@ import { BoardDetailComponent } from './board-detail/board-detail.component';
     RouterModule.forRoot(routes)
   ],
   providers: [
+    BoardService
   ],
   bootstrap: [AppComponent]
 })

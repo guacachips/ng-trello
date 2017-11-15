@@ -1,6 +1,8 @@
 import { IBoard } from '../shared/board.interface';
 import { Board } from '../shared/board.model';
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from '../shared/board.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,37 +12,16 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   boards: Board[];
+  boards$: Observable<Board[]>;
 
-  constructor() { }
+  constructor(private _boardService: BoardService) { }
 
   ngOnInit() {
+    this._boardService.getAllBoardsMocked().subscribe((boards: Board[]) => {
+      this.boards = boards;
+    });
 
-    this.boards = [
-      {
-        id: '1',
-        title: 'Board 1',
-        backgroundColor: '#127abd',
-        isStarred: false
-      },
-      {
-        id: '2',
-        title: 'Board 2',
-        backgroundColor: '#127abd',
-        isStarred: false
-      },
-      {
-        id: '3',
-        title: 'Board 3',
-        backgroundColor: '#127abd',
-        isStarred: false
-      },
-      {
-        id: '4',
-        title: 'Board 4',
-        backgroundColor: '#127abd',
-        isStarred: false
-      }
-    ];
+    this.boards$ = this._boardService.getAllBoardsMocked();
   }
 
   public getFavBoards(): Board[] {
