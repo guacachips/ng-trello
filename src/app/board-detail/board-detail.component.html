@@ -1,6 +1,6 @@
 <div *ngIf="!loading" id="board-detail" [style.backgroundColor]="board.backgroundColor">
   <div class="container">
-    <button [routerLink]="['/']">retour</button>
+    <button mat-raised-button color="primary" [routerLink]="['/']">retour</button>
     <span class="title" (click)="toggleFormCard()">{{board.title}}</span>
     <span class="flex"></span>
     <button [routerLink]="['/']">retour</button>

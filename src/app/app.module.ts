@@ -15,6 +15,8 @@ import { BoardDetailComponent } from './board-detail/board-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormCardComponent } from './form-card/form-card.component';
 
+import { NgMaterialModule } from './shared/ngMaterial/ngMaterial.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { FormCardComponent } from './form-card/form-card.component';
   ],
   imports: [
     BrowserModule,
+    NgMaterialModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes)
