@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BoardService } from './shared/board.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { routes } from './app.routing';
 import { BoardDetailComponent } from './board-detail/board-detail.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormCardComponent } from './form-card/form-card.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     BoardSummaryComponent,
     BoardCategoryComponent,
-    BoardDetailComponent
+    BoardDetailComponent,
+    FormCardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

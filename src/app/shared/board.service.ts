@@ -41,6 +41,11 @@ export class BoardService {
     return this.http.patch(url, { 'isStarred': board.isStarred });
   }
 
+  updateTitle(id: string, title: string) {
+    const url = `${this._api}/boards/${id}`;
+    return this.http.patch(url, { 'title': title });
+  }
+
   createNewBoard(): Observable<Board> {
     const url = `${this._api}/boards`;
     const body = { title: 'ngHi!' };

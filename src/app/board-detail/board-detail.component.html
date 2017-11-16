@@ -1,13 +1,13 @@
 <div *ngIf="!loading" id="board-detail" [style.backgroundColor]="board.backgroundColor">
   <div class="container">
     <button [routerLink]="['/']">retour</button>
-    <span class="title">{{board.title}}</span>
+    <span class="title" (click)="toggleFormCard()">{{board.title}}</span>
     <span class="flex"></span>
     <button [routerLink]="['/']">retour</button>
   </div>
 
-  <div *ngIf="false" class="container popup">
-    AFFICHER ICI LE COMPOSANT PERMETTANT DE CHANGER LE NOM DU BOARD
+  <div *ngIf="showFormCard" class="container popup">
+    <app-form-card [id]="board.id" [title]="board.title" (onTitleUpdated)="changeCurrentBoardTitle($event)"></app-form-card>
   </div>
 
   <div class="container">
